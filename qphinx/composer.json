@@ -1,0 +1,17 @@
+{
+    "name": "brealit/qphinx",
+    "type": "library",
+    "description": "Изменяет шаблон новой миграции robmorgan/phinx - https://phinx.org.",
+    "require": {
+      "robmorgan/phinx": "^0.12.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "QPhinx\\": "src/QPhinx/"
+        }
+    },
+    "require": {
+        "php": ">=7.2"
+    },
+    "bin": ["bin/qphinx"]
+}

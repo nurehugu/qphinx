@@ -1,0 +1,34 @@
+<?php
+declare(strict_types=1);
+$namespaceDefinition
+use $useClassName;
+
+final class $className extends $baseClassName
+{
+    /**
+     * Change Method.
+     *
+     * Write your reversible migrations using this method.
+     *
+     * More information on writing migrations is available here:
+     * https://book.cakephp.org/phinx/0/en/migrations.html#the-change-method
+     *
+     * Remember to call "create()" or "update()" and NOT "save()" when working
+     * with the Table class.
+     */
+    public function up(): void
+    {
+      $aSql[0] = <<<SQLQUERY
+        -- sql code
+        SQLQUERY;
+
+        foreach ($aSql as $sql) {
+            try {
+                $this->execute($sql);
+            } catch(Throwable $e) {
+                $message = addslashes(htmlspecialchars($e->getMessage()));
+                $this->execute("INSERT INTO `syslog`(`company_id`, `tp`, `level`, `message`, `date`) VALUES (1, 'migration', 1, '".$message."', NOW())");
+            }
+        }
+    }
+}
