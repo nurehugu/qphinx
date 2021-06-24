@@ -1,5 +1,5 @@
 {
-    "name": "qphinx/qphinx",
+    "name": "brealit/qphinx",
     "type": "library",
     "description": "Изменяет шаблон новой миграции robmorgan/phinx - https://phinx.org.",
     "require": {
